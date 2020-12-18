@@ -17,7 +17,7 @@ sudo nano Bitwarden/docker-compose.yml
 ```
 ##### Middleware (add to dynamic.yml)
 ```
-bw-stripPrefix middleware for Websocket. This middle ware will be added in dynamic.yml as below:
+bw-stripPrefix middleware for Websocket. This middleware will be added in dynamic.yml as below:
 #
     bw-stripPrefix:
       stripPrefix:
