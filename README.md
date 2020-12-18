@@ -32,7 +32,7 @@ sudo docker-compose -f Bitwarden/docker-compose.yml up -d
 ```
 ##### Log
 ```
-sudo docker logs -tf --tail="50" Bitwarden
+sudo docker logs -tf --tail="50" bitwardenrs
 ```
 
 ##### Admin Page
