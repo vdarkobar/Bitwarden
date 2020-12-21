@@ -1,11 +1,10 @@
 # Bitwarden
 ## deploy Bitwarden
 
-##### Create docker network
+##### Create docker networks (*if not already created*)
 ```
-sudo docker network create proxy
+sudo docker network create bw
 ```
-
 ### Clone this git repository:
 ```
 git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/Bitwarden.git
