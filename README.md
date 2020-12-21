@@ -1,5 +1,5 @@
 # Bitwarden
-## deploy Bitwarden behind Traefik
+## deploy Bitwarden
 
 ##### Create docker network
 ```
