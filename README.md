@@ -25,7 +25,7 @@ bw-stripPrefix middleware for Websocket. This middleware will be added in dynami
         forceSlash: false
 #
 ```
-##### Create new file for add to your dynamic.yml
+##### Create new file for Traefik dynamic configuration (or add to your dynamic.yml)
 ```
 http:
   # Routers
