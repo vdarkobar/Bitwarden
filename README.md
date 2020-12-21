@@ -26,6 +26,42 @@ bw-stripPrefix middleware for Websocket. This middleware will be added in dynami
         forceSlash: false
 #
 ```
+##### Create new file for add to your dynamic.yml
+```
+http:
+  # Routers
+  routers:
+  #
+    bitwarden-ws:
+      service: bitwarden-websocket
+      middlewares:
+        - bw-stripPrefix@file
+      entryPoints:
+        - "websecure"
+      rule: "Host(`bw.domain.com`) && Path(`/notifications/hub`)"
+
+    bitwarden-ws:
+      service: bitwarden-service
+      middlewares:
+      entryPoints:
+        - "websecure"
+      rule: "Host(`bw.domain.com`)"
+
+  # Services
+  services:
+  #
+    bitwarden-websocket:
+      loadBalancer:
+        servers:
+          - url: "http://server_ip:3012"
+
+    bitwarden-service:
+      loadBalancer:
+        servers:
+          - url: "http://server_ip:8686" # adjust port nummber
+#
+```
+
 ##### Start
 ```
 sudo docker-compose -f Bitwarden/docker-compose.yml up -d
@@ -35,7 +71,7 @@ sudo docker-compose -f Bitwarden/docker-compose.yml up -d
 sudo docker logs -tf --tail="50" bitwardenrs
 ```
 
-##### Admin Page
+##### Enable Admin Page
 ```
 # https://github.com/dani-garcia/bitwarden_rs/wiki
 # ADMIN_TOKEN=
