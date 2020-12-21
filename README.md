@@ -10,25 +10,13 @@ sudo docker network create bw
 git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/Bitwarden.git
 ```
 
-##### Change domain name
+##### Change domain name in multiple files
 ```
 sudo nano Bitwarden/docker-compose.yml
-```
-##### Middleware (add to dynamic.yml)
-```
-bw-stripPrefix middleware for Websocket. This middleware will be added in dynamic.yml as below:
-#
-    bw-stripPrefix:
-      stripPrefix:
-        prefixes:
-          - "/notifications/hub"
-        forceSlash: false
-#
 ```
 ##### Create new file for Traefik dynamic configuration (or add to your dynamic.yml)
 ```
 http:
-  # Routers
   routers:
   #
     bitwarden-ws:
@@ -46,7 +34,6 @@ http:
         - "websecure"
       rule: "Host(`bw.domain.com`)"
 
-  # Services
   services:
   #
     bitwarden-websocket:
@@ -58,6 +45,18 @@ http:
       loadBalancer:
         servers:
           - url: "http://server_ip:8686" # adjust port nummber
+#
+```
+##### Middleware (add to dynamic.yml)
+```
+http:
+  middlewares:
+#
+    bw-stripPrefix:
+      stripPrefix:
+        prefixes:
+          - "/notifications/hub"
+        forceSlash: false
 #
 ```
 
