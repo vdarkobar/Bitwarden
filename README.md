@@ -7,12 +7,13 @@ sudo docker network create bw
 ```
 ### Clone this git repository:
 ```
-git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/Bitwarden.git
+echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
+&& git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/Bitwarden.git .
 ```
 
 ##### Change domain name in multiple files
 ```
-sudo nano Bitwarden/docker-compose.yml
+sudo nano docker-compose.yml
 ```
 ##### Create new file for Traefik dynamic configuration (or add to your dynamic.yml)
 ```
@@ -62,7 +63,7 @@ http:
 
 ##### Start
 ```
-sudo docker-compose -f Bitwarden/docker-compose.yml up -d
+sudo docker-compose up -d
 ```
 ##### Log
 ```
