@@ -15,7 +15,7 @@ echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 ```
 sudo nano docker-compose.yml
 ```
-##### Create new file for Traefik dynamic configuration (or add to your dynamic.yml)
+##### Create new file for Traefik dynamic configuration, or add to your dynamic.yml (site specific files)
 ```
 http:
   routers:
