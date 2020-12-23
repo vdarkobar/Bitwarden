@@ -18,8 +18,10 @@ sudo nano docker-compose.yml
 ##### Create new file for Traefik dynamic configuration, or add to your dynamic.yml (site specific files)
 ```
 http:
+  # All routers:
   routers:
-  #
+  
+    # Bitwarden Websocket router
     bitwarden-ws:
       service: bitwarden-websocket
       middlewares:
@@ -28,6 +30,7 @@ http:
         - "websecure"
       rule: "Host(`bw.domain.com`) && Path(`/notifications/hub`)"
 
+    # Bitwarden service router
     bitwarden-ws:
       service: bitwarden-service
       middlewares:
@@ -35,32 +38,35 @@ http:
         - "websecure"
       rule: "Host(`bw.domain.com`)"
 
+  # All services:
   services:
-  #
+  
+    # Bitwarden Websocket service
     bitwarden-websocket:
       loadBalancer:
         servers:
           - url: "http://server_ip:3012"
 
+    # Bitwarden service
     bitwarden-service:
       loadBalancer:
         servers:
           - url: "http://server_ip:8686" # adjust port nummber
 #
 ```
-##### Middleware (add to dynamic.yml)
+##### Middleware for Websocket (add to dynamic.yml)
 ```
 http:
+  # All middlewares:
   middlewares:
-#
+  
+    # Websocket middleware
     bw-stripPrefix:
       stripPrefix:
         prefixes:
           - "/notifications/hub"
         forceSlash: false
-#
 ```
-
 ##### Start
 ```
 sudo docker-compose up -d
@@ -69,7 +75,6 @@ sudo docker-compose up -d
 ```
 sudo docker logs -tf --tail="50" bitwardenrs
 ```
-
 ##### Enable Admin Page
 ```
 # https://github.com/dani-garcia/bitwarden_rs/wiki
