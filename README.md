@@ -16,7 +16,7 @@ TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
 ##### Check domain name entries
 ```
-sudo nano docker-compose.yml
+sudo nano .env
 ```
 ##### Create site specific file for Traefik dynamic configuration, or add to your dynamic.yml
 ```
