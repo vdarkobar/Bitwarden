@@ -31,7 +31,7 @@ http:
         - bw-stripPrefix@file
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.domain.com`) && Path(`/notifications/hub`)"
+      rule: "Host(`bw.$DOMAINNAME`) && Path(`/notifications/hub`)"
 
     # Bitwarden service router
     bitwarden-ws:
@@ -39,7 +39,7 @@ http:
       middlewares:
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.domain.com`)"
+      rule: "Host(`bw.$DOMAINNAME`)"
 
   # All services:
   services:
@@ -78,9 +78,5 @@ sudo docker-compose up -d
 ```
 sudo docker logs -tf --tail="50" bitwardenrs
 ```
-##### Enable Admin Page
-```
-# https://github.com/dani-garcia/bitwarden_rs/wiki
-# ADMIN_TOKEN=
-openssl rand -base64 48
-```
+  
+[Features](https://github.com/dani-garcia/bitwarden_rs/wiki)
