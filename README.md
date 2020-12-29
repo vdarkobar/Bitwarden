@@ -14,7 +14,7 @@ echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 ```
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
-##### Change domain name in multiple files
+##### Check domain name entries
 ```
 sudo nano docker-compose.yml
 ```
@@ -76,6 +76,7 @@ sudo docker-compose up -d
 ```
 ##### Log
 ```
+sudo docker-compose logs bitwardenrs
 sudo docker logs -tf --tail="50" bitwardenrs
 ```
   
