@@ -5,15 +5,28 @@ services:
     image: bitwardenrs/server:latest
     container_name: bitwarden
     restart: always
-    ports:
-      - 8686:80
-    volumes:
-      - ./bw-data:/data
-    environment:
-      #- ADMIN_TOKEN=
-      - WEBSOCKET_ENABLED=true
+
     networks:
       - bw
+
+    ports:
+      - 8686:80
+      - 3012:3012
+
+    volumes:
+      - ./bw-data:/data
+      - /var/log/docker:/var/log/docker
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+    environment:
+#      - ADMIN_TOKEN=
+      - WEBSOCKET_ENABLED=true
+      - SIGNUPS_ALLOWED=true # Change to false after first login
+      - INVITATIONS_ALLOWED=true # Send invitation using admin page
+      - LOG_FILE=/var/log/docker/bitwarden.log
+      - DOMAIN=https://bw.$DOMAINNAME
+ 
 #    labels: # use labels only if on the same VM as Traefik (same Docker host)
 #      - "traefik.enable=true"
 #      - "traefik.docker.network=proxy"
@@ -28,7 +41,7 @@ services:
 #      - "traefik.http.middlewares.bitwarden-ws=bw-stripPrefix@file"
 #      - "traefik.http.routers.bitwarden-ws.service=bitwarden-websocket"
 #      - "traefik.http.services.bitwarden-websocket.loadbalancer.server.port=3012"
-      
+
 networks:
   bw:
     external: true
