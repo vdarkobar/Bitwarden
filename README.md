@@ -79,4 +79,4 @@ sudo docker-compose up -d
 sudo docker logs -tf --tail="50" bitwardenrs
 ```
   
-[Features](https://github.com/dani-garcia/bitwarden_rs/wiki)
+### Bitwarden [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)
