@@ -12,7 +12,7 @@ echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 ```
 ##### Change ADMIN_TOKEN (*Only Works Once!*)
 ```
-TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE|${TOKEN}|" .env
+TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
 ##### Change domain name in multiple files
 ```
