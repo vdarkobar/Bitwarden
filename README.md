@@ -22,6 +22,7 @@ sudo nano .env
 ##### Dynamic config
 ```
 http:
+
   # All routers:
   routers:
   
@@ -32,7 +33,7 @@ http:
         - bw-stripPrefix@file
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.$DOMAINNAME`) && Path(`/notifications/hub`)"
+      rule: "Host(`bw.domain`) && Path(`/notifications/hub`)" # adjust domain
 
     # Bitwarden service router
     bitwarden-ws:
@@ -40,7 +41,8 @@ http:
       middlewares:
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.$DOMAINNAME`)"
+      rule: "Host(`bw.domain`)" # adjust domain
+
 
   # All services:
   services:
@@ -49,14 +51,14 @@ http:
     bitwarden-websocket:
       loadBalancer:
         servers:
-          - url: "http://server_ip:3012"
+          - url: "http://local-ip:3012" # adjust ip (port fixed)
 
     # Bitwarden service
     bitwarden-service:
       loadBalancer:
         servers:
-          - url: "http://server_ip:8686" # adjust port nummber
-#
+          - url: "http://local-ip:8686" # adjust ip and port nummber
+
 ```
 ##### Middlewares 
 ```
