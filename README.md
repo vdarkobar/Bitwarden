@@ -18,7 +18,8 @@ TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
 sudo nano .env
 ```
-##### Create site specific file for Traefik dynamic configuration, or add to your dynamic.yml
+  
+##### Dynamic config
 ```
 http:
   # All routers:
@@ -57,7 +58,7 @@ http:
           - url: "http://server_ip:8686" # adjust port nummber
 #
 ```
-##### Middleware for Websocket (add to dynamic.yml)
+##### Middlewares 
 ```
 http:
   # All middlewares:
