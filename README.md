@@ -11,7 +11,7 @@ sudo docker network create bw
 ### Clone this git repository
 ```
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
-cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden .
+cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
 ```
 ### Change ADMIN_TOKEN (*Only Works Once!*) (bash)
 ```
