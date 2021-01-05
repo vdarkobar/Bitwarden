@@ -4,7 +4,7 @@
   <a href="https://github.com/vdarkobar/Home_Lab">Home</a>
 </p>  
   
-##### Create docker networks (*if not already created*)
+### Create docker networks (*if not already created*)
 ```
 sudo docker network create bw
 ```
@@ -13,16 +13,16 @@ sudo docker network create bw
 echo -n "Enter directory name: "; read NAME; mkdir -p "$NAME"; cd "$NAME" \
 && git clone https://vdarkobar:2211620c9da5dab0c7bb77e9aeb02087d293b293@github.com/vdarkobar/Bitwarden.git .
 ```
-##### Change ADMIN_TOKEN (*Only Works Once!*) (bash)
+### Change ADMIN_TOKEN (*Only Works Once!*) (bash)
 ```
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
-##### Adjust if necessary
+### Adjust if necessary
 ```
 sudo nano .env
 ```
   
-##### Dynamic config
+### Dynamic config *(Traefik VM)*
 ```
 http:
 
@@ -36,7 +36,7 @@ http:
         - bw-stripPrefix@file
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.domain`) && Path(`/notifications/hub`)" # adjust domain
+      rule: "Host(`bw.example.com`) && Path(`/notifications/hub`)" # adjust domain
 
     # Bitwarden service router
     bitwarden-ws:
@@ -44,7 +44,7 @@ http:
       middlewares:
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.domain`)" # adjust domain
+      rule: "Host(`bw.example.com`)" # adjust domain
 
 
   # All services:
