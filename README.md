@@ -14,7 +14,7 @@ RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "
 cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
 ```
 ### Change ADMIN_TOKEN 
-*Only works once, use bash
+*Only works once, use bash*
 ```
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
