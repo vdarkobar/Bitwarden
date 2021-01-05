@@ -78,7 +78,7 @@ http:
           - url: "http://local-ip:8686" # adjust ip and port nummber
 
 ```
-##### Middlewares 
+### Middlewares *(Traefik VM)*
 ```
 http:
   # All middlewares:
