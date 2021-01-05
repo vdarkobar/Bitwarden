@@ -13,14 +13,28 @@ sudo docker network create bw
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
 cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
 ```
-### Change ADMIN_TOKEN 
+  
+#### *Decide what you will use for*:
+```
+Domain name,
+```
+### Select and run all at once. Enter required data:
 *Only works once, use bash*
 ```
+RED='\033[0;31m'
+echo -ne "${RED}Enter Domain name: "; read DNAME; \
+sed -i "s|01|${DNAME}|" .env && \
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
-### Adjust if necessary
+  
+##### Start
 ```
-sudo nano .env
+sudo docker-compose up -d
+```
+##### Log
+```
+sudo docker-compose logs bitwardenrs
+sudo docker logs -tf --tail="50" bitwardenrs
 ```
   
 ### Dynamic config *(Traefik VM)*
@@ -76,15 +90,6 @@ http:
         prefixes:
           - "/notifications/hub"
         forceSlash: false
-```
-##### Start
-```
-sudo docker-compose up -d
-```
-##### Log
-```
-sudo docker-compose logs bitwardenrs
-sudo docker logs -tf --tail="50" bitwardenrs
 ```
   
 ### Bitwarden [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)
