@@ -13,7 +13,8 @@ sudo docker network create bw
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
 cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
 ```
-### Change ADMIN_TOKEN (*Only Works Once!*) (bash)
+### Change ADMIN_TOKEN 
+*Only works once, use bash
 ```
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
