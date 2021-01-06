@@ -4,6 +4,11 @@
   <a href="https://github.com/vdarkobar/Home_Cloud#proxmox">Home</a>
 </p>  
   
+Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* subdomain, pointing to your root domain.
+```
+    CNAME | bw | @ (or example.com)
+```
+  
 ### Create docker networks
 ```
 sudo docker network create bw
