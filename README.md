@@ -8,7 +8,9 @@ Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* su
 ```
     CNAME | bw | @ (or example.com)
 ```
-  
+
+---
+
 ### Create docker networks
 ```
 sudo docker network create bw
