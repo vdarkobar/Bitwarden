@@ -11,11 +11,11 @@ Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* su
 
 ---
 
-### Create docker networks
+### Create Docker networks
 ```
 sudo docker network create bw
 ```
-### Clone this git repository
+### Clone Bitwarden git repository
 ```
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
 cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
