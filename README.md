@@ -17,6 +17,7 @@ cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
 #### *Decide what you will use for*:
 ```
 Domain name,
+# Command will add ADMIN_TOKEN to .env file.
 ```
 ### Select and run all at once. Enter required data:
 *Only works once, use bash*
