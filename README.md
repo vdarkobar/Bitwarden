@@ -11,11 +11,11 @@ Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* su
 
 ---
 
-### Create Docker networks
+### Create Docker networks:
 ```
 sudo docker network create bw
 ```
-### Clone Bitwarden git repository
+### Clone Bitwarden git repository:
 ```
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
 cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
@@ -35,17 +35,17 @@ sed -i "s|01|${DNAME}|" .env && \
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
   
-##### Start
+### Start:
 ```
 sudo docker-compose up -d
 ```
-##### Log
+### Log:
 ```
 sudo docker-compose logs bitwardenrs
 sudo docker logs -tf --tail="50" bitwardenrs
 ```
   
-### Dynamic config *(Traefik VM)*
+### Dynamic config *(Traefik VM)*:
 create file: service_name.yml in Traefik: /data/configurations/ folder for routing and to get a free SSL certificate.
 ```
 http:
@@ -87,10 +87,11 @@ http:
           - url: "http://local-ip:8686" # adjust ip and port nummber
 
 ```
-### Middlewares *(Traefik VM)*
+### Middlewares *(Traefik VM)*:
 Add to: middlewares.yml in Traefik: /data/configurations/
 ```
 http:
+
   # All middlewares:
   middlewares:
   
@@ -102,4 +103,4 @@ http:
         forceSlash: false
 ```
   
-### Bitwarden [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)
+### Bitwarden: [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)
