@@ -96,7 +96,7 @@ http:
   # All middlewares:
   middlewares:
   
-    # Websocket middleware
+    # Websocket Bitwarden
     bw-stripPrefix:
       stripPrefix:
         prefixes:
