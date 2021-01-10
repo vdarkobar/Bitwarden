@@ -52,7 +52,7 @@ sudo docker logs -tf --tail="50" bitwardenrs
 ```
   
 ### Dynamic config *(Traefik VM)*:
-create file: service_name.yml in Traefik: /data/configurations/ folder for routing and to get a free SSL certificate.
+Create file: *service_name.yml* in Traefik: */data/configurations/* folder for routing and to get a free SSL certificate.
 ```
 http:
 
