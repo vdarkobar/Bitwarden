@@ -109,4 +109,6 @@ http:
         forceSlash: false
 ```
   
-### Bitwarden: [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)
+### Bitwarden: [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)  
+  
+<a href="https://github.com/vdarkobar/Bitwarden#bitwarden">top of the page</a>
