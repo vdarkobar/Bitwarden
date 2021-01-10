@@ -9,7 +9,7 @@
   <br><br>
 </p>  
   
-Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* subdomain, pointing to your root domain.
+Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* Subdomain, pointing to your root Domain.
 ```
     CNAME | bw | @ (or example.com)
 ```
