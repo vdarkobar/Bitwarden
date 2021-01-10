@@ -66,7 +66,7 @@ http:
         - bw-stripPrefix@file
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.example.com`) && Path(`/notifications/hub`)" # adjust domain
+      rule: "Host(`bw.example.com`) && Path(`/notifications/hub`)" # adjust domain name
 
     # Bitwarden service router
     bitwarden-ws:
@@ -74,7 +74,7 @@ http:
       middlewares:
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.example.com`)" # adjust domain
+      rule: "Host(`bw.example.com`)" # adjust domain name
 
 
   # All services:
@@ -84,7 +84,7 @@ http:
     bitwarden-websocket:
       loadBalancer:
         servers:
-          - url: "http://local-ip:3012" # adjust ip (port fixed)
+          - url: "http://local-ip:3012" # adjust ip
 
     # Bitwarden service
     bitwarden-service:
@@ -94,7 +94,7 @@ http:
 
 ```
 ### Middlewares *(Traefik VM)*:
-Add to: middlewares.yml in Traefik: /data/configurations/
+Add to: *middlewares.yml* in Traefik: */data/configurations/*
 ```
 http:
 
