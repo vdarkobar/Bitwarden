@@ -3,7 +3,7 @@ version: '3.8'
 services:
   bitwarden:
     image: bitwardenrs/server:latest
-    container_name: bitwarden
+    container_name: bitwarden # change for multiple instances
     restart: always
 
     networks:
