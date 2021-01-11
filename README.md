@@ -29,8 +29,9 @@ cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
 #### *Decide what you will use for*:
 ```
 Domain name,
-# Command will add ADMIN_TOKEN to .env file.
+Bitwarden Port Number.
 ```
+
 ### Select and run all at once. Enter required data:
 *Only works once, on wrong data input delete folder and clone again*.
 ```
@@ -41,6 +42,11 @@ sed -i "s|01|${DNAME}|" .env && \
 sed -i "s|02|${BWPORTN}|" .env && \
 rm README.md && \
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
+```
+  
+#### Command will add *ADMIN_TOKEN* to *.env* file, log in at:
+```
+https://bw.example.com/admin
 ```
   
 ### Start:
