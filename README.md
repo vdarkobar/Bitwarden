@@ -119,4 +119,7 @@ http:
   
 ### Bitwarden: [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)  
   
+  
+<p align="center">  
 <a href="https://github.com/vdarkobar/Bitwarden#bitwarden">top of the page</a>
+</p>
