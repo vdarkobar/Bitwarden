@@ -20,7 +20,7 @@ Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* Su
 ```
 sudo docker network create bw
 ```
-### Clone Bitwarden git repository:
+### Clone Bitwarden Git Repository:
 ```
 RED='\033[0;31m'; echo -ne "${RED}Enter directory name: "; read NAME; mkdir -p "$NAME"; \
 cd "$NAME" && git clone https://github.com/vdarkobar/Bitwarden.git .
@@ -32,7 +32,7 @@ Domain name,
 # Command will add ADMIN_TOKEN to .env file.
 ```
 ### Select and run all at once. Enter required data:
-*Only works once, use bash*
+*Only works once, on wrong data input delete folder and clone again*
 ```
 RED='\033[0;31m'
 echo -ne "${RED}Enter Domain name: "; read DNAME; \
