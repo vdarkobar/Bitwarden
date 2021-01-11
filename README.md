@@ -68,10 +68,10 @@ http:
         - bw-stripPrefix@file
       entryPoints:
         - "websecure"
-      rule: "Host(`bw.example.com`) && Path(`/notifications/hub`)" # adjust domain name
+      rule: "Host(`bw.example.com`) && Path(`/notifications/hub`)" # adjust Domain name
 
     # Bitwarden service router
-    bitwarden-ws:
+    bitwarden-service:
       service: bitwarden-service
       middlewares:
       entryPoints:
