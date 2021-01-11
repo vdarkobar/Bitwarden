@@ -36,7 +36,9 @@ Domain name,
 ```
 RED='\033[0;31m'
 echo -ne "${RED}Enter Domain name: "; read DNAME; \
+echo -ne "${RED}Enter Bitwarden Port Number (BWPORTN:80): "; read BWPORTN; \
 sed -i "s|01|${DNAME}|" .env && \
+sed -i "s|02|${BWPORTN}|" .env && \
 rm README.md && \
 TOKEN=$(openssl rand -base64 48); sed -i "s|CHANGE_ADMIN_TOKEN|${TOKEN}|" .env
 ```
