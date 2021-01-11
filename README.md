@@ -92,7 +92,7 @@ http:
     bitwarden-service:
       loadBalancer:
         servers:
-          - url: "http://local-ip:8686" # adjust ip and port nummber
+          - url: "http://local-ip:BWPORTN" # adjust ip and port nummber
 
 ```
 ### Middlewares *(Traefik VM)*:
