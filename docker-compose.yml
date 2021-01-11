@@ -10,7 +10,7 @@ services:
       - bw
 
     ports:
-      - 8686:80
+      - $BWPORTN:80
       - 3012:3012
 
     volumes:
