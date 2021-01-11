@@ -117,7 +117,7 @@ http:
         forceSlash: false
 ```
   
-### Bitwarden: [Features](https://github.com/dani-garcia/bitwarden_rs/wiki)  
+### Bitwarden: <i><a href="https://github.com/dani-garcia/bitwarden_rs/wiki">Features</a></i>
   
   
 <p align="center">  
