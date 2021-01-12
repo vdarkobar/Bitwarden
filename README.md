@@ -11,6 +11,9 @@
   
 Login to <a href="https://dash.cloudflare.com/">CloudFlare</a>  and add: *bw* Subdomain, pointing to your root Domain.
 ```
+    A | example.com | YOUR WAN IP
+```
+```
     CNAME | bw | @ (or example.com)
 ```
 
